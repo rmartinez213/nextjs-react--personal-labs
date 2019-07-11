@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,13 +107,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavBar */ "./Components/NavBar.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\Components\\Layout.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\Components\\Layout.js";
 
 
-
-
+ //import '../css/style.css'
 
 function MyImage() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -187,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\Components\\NavBar.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\Components\\NavBar.js";
 
 
 
@@ -309,7 +306,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\Components\\Prices.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\Components\\Prices.js";
 
 
 var Prices =
@@ -457,14 +454,18 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./css/style.css":
-/*!***********************!*\
-  !*** ./css/style.css ***!
-  \***********************/
+/***/ "./api/api.js":
+/*!********************!*\
+  !*** ./api/api.js ***!
+  \********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
+var apiEndpoint = 'https://api.coindesk.com/v1/bpi/currentprice.json';
+module.exports = apiEndpoint;
 
 /***/ }),
 
@@ -1650,9 +1651,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/Layout */ "./Components/Layout.js");
 /* harmony import */ var _Components_Prices__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/Prices */ "./Components/Prices.js");
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! node-fetch */ "node-fetch");
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../api/api */ "./api/api.js");
+/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_api_api__WEBPACK_IMPORTED_MODULE_6__);
 
 
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\pages\\index.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\pages\\index.js";
+
+
 
 
 
@@ -1661,20 +1668,20 @@ var Index = function Index(props) {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 7
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 9
     },
     __self: this
   }, "Menu")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
@@ -1683,14 +1690,14 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Components_Prices__WEBPACK_IMPORTED_MODULE_4__["default"], {
     bpi: props.bpi,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
   })));
@@ -1707,7 +1714,7 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(f
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+          return node_fetch__WEBPACK_IMPORTED_MODULE_5___default()(_api_api__WEBPACK_IMPORTED_MODULE_6___default.a);
 
         case 2:
           res = _context.sent;
@@ -1731,14 +1738,14 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(f
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\rmart\Desktop\Summer\ServerSideRendering\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\rmart\Desktop\Summer\Nextjs\FirstNextApplication\pages\index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -1938,6 +1945,17 @@ module.exports = require("next-server/dist/lib/utils");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "node-fetch":
+/*!*****************************!*\
+  !*** external "node-fetch" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("node-fetch");
 
 /***/ }),
 

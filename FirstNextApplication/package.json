@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,8 +14,10 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "acorn": "^6.2.0",
+    "cross-env": "^5.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.0",
+    "node-fetch": "^2.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }

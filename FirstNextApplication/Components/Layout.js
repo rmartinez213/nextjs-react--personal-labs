@@ -1,6 +1,6 @@
 import NavBar from './NavBar'
 import Head from 'next/head'
-import '../css/style.css'
+//import '../css/style.css'
 
 function MyImage() {
     return <img src="../static/TransparentLogo.png" alt="my image" />;

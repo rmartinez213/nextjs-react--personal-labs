@@ -14,13 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavBar */ "./Components/NavBar.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\Components\\Layout.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\Components\\Layout.js";
 
 
-
-
+ //import '../css/style.css'
 
 function MyImage() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -94,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\Components\\NavBar.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\Components\\NavBar.js";
 
 
 
@@ -216,7 +213,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\Components\\Prices.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\Components\\Prices.js";
 
 
 var Prices =
@@ -361,6 +358,21 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Prices);
+
+/***/ }),
+
+/***/ "./api/api.js":
+/*!********************!*\
+  !*** ./api/api.js ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var apiEndpoint = 'https://api.coindesk.com/v1/bpi/currentprice.json';
+module.exports = apiEndpoint;
 
 /***/ }),
 
@@ -6876,10 +6888,10 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CServerSideRendering%5Cpages%5Cindex.js!./":
-/*!*********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CServerSideRendering%5Cpages%5Cindex.js ***!
-  \*********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CNextjs%5CFirstNextApplication%5Cpages%5Cindex.js!./":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CNextjs%5CFirstNextApplication%5Cpages%5Cindex.js ***!
+  \*******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7491,6 +7503,40 @@ function withRouter(ComposedComponent) {
 
 module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/next/dist/client/link.js")
 
+
+/***/ }),
+
+/***/ "./node_modules/node-fetch/browser.js":
+/*!********************************************!*\
+  !*** ./node_modules/node-fetch/browser.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// ref: https://github.com/tc39/proposal-global
+var getGlobal = function () {
+	// the only reliable means to get the global object is
+	// `Function('return this')()`
+	// However, this causes CSP violations in Chrome apps.
+	if (typeof self !== 'undefined') { return self; }
+	if (true) { return window; }
+	if (typeof global !== 'undefined') { return global; }
+	throw new Error('unable to locate global object');
+}
+
+var global = getGlobal();
+
+module.exports = exports = global.fetch;
+
+// Needed for TypeScript and Webpack.
+exports.default = global.fetch.bind(global);
+
+exports.Headers = global.Headers;
+exports.Request = global.Request;
+exports.Response = global.Response;
 
 /***/ }),
 
@@ -11199,9 +11245,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/Layout */ "./Components/Layout.js");
 /* harmony import */ var _Components_Prices__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/Prices */ "./Components/Prices.js");
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! node-fetch */ "./node_modules/node-fetch/browser.js");
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../api/api */ "./api/api.js");
+/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_api_api__WEBPACK_IMPORTED_MODULE_6__);
 
 
-var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\ServerSideRendering\\pages\\index.js";
+var _jsxFileName = "C:\\Users\\rmart\\Desktop\\Summer\\Nextjs\\FirstNextApplication\\pages\\index.js";
+
+
 
 
 
@@ -11210,20 +11262,20 @@ var Index = function Index(props) {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 7
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 9
     },
     __self: this
   }, "Menu")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
@@ -11232,14 +11284,14 @@ var Index = function Index(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Components_Prices__WEBPACK_IMPORTED_MODULE_4__["default"], {
     bpi: props.bpi,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
   })));
@@ -11256,7 +11308,7 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(f
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+          return node_fetch__WEBPACK_IMPORTED_MODULE_5___default()(_api_api__WEBPACK_IMPORTED_MODULE_6___default.a);
 
         case 2:
           res = _context.sent;
@@ -11281,13 +11333,13 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(f
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CServerSideRendering%5Cpages%5Cindex.js ***!
-  \*************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CNextjs%5CFirstNextApplication%5Cpages%5Cindex.js ***!
+  \***********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CServerSideRendering%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CServerSideRendering%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CNextjs%5CFirstNextApplication%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Crmart%5CDesktop%5CSummer%5CNextjs%5CFirstNextApplication%5Cpages%5Cindex.js!./");
 
 
 /***/ }),
@@ -11303,5 +11355,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
