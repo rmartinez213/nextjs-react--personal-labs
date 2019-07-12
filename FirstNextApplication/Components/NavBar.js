@@ -1,12 +1,6 @@
 import { Component } from 'react'
 import Link from 'next/link'
 
-const red = 1;
-
-function toggleAnimation(a){
-    
-}
-
 const NavBar = () => (
  <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
     <div className="container">
